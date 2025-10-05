@@ -164,7 +164,8 @@ body {
 @media (max-width: 1000px) {
   #map {
     height: 200px !important;
-    width: 200px !important;
+    width: 320px !important;
   }
 }
+
 
