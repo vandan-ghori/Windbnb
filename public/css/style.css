@@ -35,6 +35,12 @@ body {
     background: rgb(255, 255, 255) !important;
     opacity: 1 !important;
   }
+
+  .show {
+    margin-left: -150px !important;
+    margin-right: -150px !important;
+    }
+
   .navbar-nav {
     justify-content: center !important;
     align-items: center !important;
@@ -149,5 +155,12 @@ body {
 #map {
     height: 250px;
     width: 500px;
-
 }
+
+@media (max-width: 1000px) {
+  #map {
+    height: 200px !important;
+    width: 200px !important;
+  }
+}
+
