@@ -79,20 +79,20 @@
        <% if (listing.reviews.length > 0) { %>
             <div class="row">
                 <p>All Reviews</p>
-                <% for (review of listing.reviews) {%>
-                    <div class="card col-5 ms-3 mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title mt-3">@<%= review.author.username %></h5>
-                            <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
-                            <p class="card-text mb-3"><%= review.comment %></p>
-                            <% if (currUser && currUser._id.equals(listing.owner._id)) { %>
-                                <form method="post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" class="mb-3">
-                                    <button class="btn btn-sm btn-dark">Delete</button>
-                                </form>
-                            <% } %>
-                        </div>
+                   <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <% for (review of listing.reviews) {%>
+                            <div class="card col-8 mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">@<%= review.author.username %></h5>
+                                    <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
+                                    <p class="card-text"><%= review.comment %></p>
+                                    <form method="post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" class="mb-3">
+                                        <button class="btn btn-sm btn-dark">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
-                <% } %>
             </div>
         <% } %>
     </div>
@@ -104,4 +104,5 @@
 
 
 <script src="/js/map.js"></script>
+
 
