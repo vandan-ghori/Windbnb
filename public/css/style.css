@@ -30,6 +30,27 @@ body {
     color: #222222 !important;
 }
 
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+  }
+  .navbar-nav {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 15px !important;
+    background: none;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background: rgb(255, 255, 255);
+    transition: 0.5s !important;
+  }
+}
+
 
 /* Footer */
 .f-info {
@@ -128,4 +149,5 @@ body {
 #map {
     height: 250px;
     width: 500px;
+
 }
