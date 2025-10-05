@@ -3,7 +3,7 @@
     const mapToken = "<%= process.env.MAP_TOKEN %>";
     const listing = <%- JSON.stringify(listing) %>;
 </script>
-<div class="row mt-3 show">
+<div id="show" class="row mt-3 show">
     <div class="col-8 offset-3">
         <h3><%= listing.title %></h3>
     </div>
@@ -104,5 +104,6 @@
 
 
 <script src="/js/map.js"></script>
+
 
 
