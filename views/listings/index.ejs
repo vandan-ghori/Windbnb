@@ -4,7 +4,7 @@
     #filters{
         display: flex;
         flex-wrap: wrap;
-        gap: 2.5rem;
+        gap: 2rem;
         align-items: center;
     }
 
@@ -28,66 +28,169 @@
     }
 
     .tax-toggle {
-        border: 1px solid black;
-        border-radius: 1rem;
-        height: 3.25rem;
-        padding: 1rem;
-        margin-left: 8rem;
-        display: flex;
-        align-items: center;
+    margin-left: 80%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #000;
+    height: 2.5rem;
+    padding: 5px;
+    font-weight: 600;
+  }
+
+
+    @media (max-width: 768px) {
+    .castles,
+    .pool,
+    .camps,
+    .farms,
+    .arctic,
+    .tinyhome,
+    .beach,
+    .golfing,
+    .lake,
+    .towers,
+    .boat {
+      display: none;
     }
+    .tax-toggle {
+        margin-left: 60% !important;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .castles,
+    .camps,
+    .farms,
+    .tinyhome,
+    .golfing,
+    .lake,
+    .towers,
+    .boat {
+      display: none;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .castles,
+    .camps,
+    .farms,
+    .tinyhome,
+    .golfing,
+    .lake,
+    .towers,
+    .boat {
+      display: none;
+    }
+  }
+  @media (max-width: 1200px) {
+    .castles,
+    .camps,
+    .farms,
+    .tinyhome,
+    .golfing {
+      display: none;
+    }
+  }
+  @media (max-width: 1500px) {
+    .tinyhome,
+    .golfing {
+      display: none;
+    }
+  }
 </style>
     
 <div id="filters">
-    <div class="filter">
-        <div><i class="ri-fire-fill"></i></div>
-        <p>Trending</p>
+  <div class="filter trending">
+    <div>
+      <i class="fa-solid fa-fire-flame-curved"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="ri-hotel-bed-fill"></i></div>
-        <p>Rooms</p>
+    <p class="filterText">Trending</p>
+  </div>
+  <div class="filter rooms">
+    <div>
+      <i class="fa-solid fa-person-shelter"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="ri-building-2-fill"></i></div>
-        <p>Iconic Cities</p>
+    <p class="filterText">Rooms</p>
+  </div>
+  <div class="filter iconicCity">
+    <div>
+      <i class="fa-solid fa-mountain-city"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Pool</p>
+    <p class="filterText">Iconic City</p>
+  </div>
+  <div class="filter mountains">
+    <div>
+      <i class="fa-solid fa-mountain-sun"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castle</p>
+    <p class="filterText">Mountains</p>
+  </div>
+  <div class="filter castles">
+    <div>
+      <i class="fa-brands fa-fort-awesome"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
+    <p class="filterText">Castles</p>
+  </div>
+  <div class="filter pool">
+    <div>
+      <i class="fa-solid fa-person-swimming"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-solid fa-cow"></i></div>
-        <p>Farms</p>
+    <p class="filterText">Pool</p>
+  </div>
+  <div class="filter camps">
+    <div>
+      <i class="fa-solid fa-signs-post"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-solid fa-person-skiing"></i></i></div>
-        <p>Arctic</p>
+    <p class="filterText">Camps</p>
+  </div>
+  <div class="filter farms">
+    <div>
+      <i class="fa-solid fa-cow"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-solid fa-landmark-dome"></i></div>
-        <p>Dome</p>
+    <p class="filterText">Farms</p>
+  </div>
+  <div class="filter arctic">
+    <div>
+      <i class="fa-solid fa-snowman"></i>
     </div>
-
-    <div class="filter">
-        <div><i class="fa-solid fa-ship"></i></div>
-        <p>Housr Boat</p>
+    <p class="filterText">Arctic</p>
+  </div>
+  <div class="filter tinyhome">
+    <div>
+      <i class="fa-solid fa-house-chimney"></i>
     </div>
+    <p class="filterText">Tiny Home</p>
+  </div>
+  <div class="filter beach">
+    <div>
+      <i class="fa-solid fa-umbrella-beach"></i>
+    </div>
+    <p class="filterText">Beach</p>
+  </div>
+  <div class="filter golfing">
+    <div>
+      <i class="fa-solid fa-golf-ball-tee"></i>
+    </div>
+    <p class="filterText">Golfing</p>
+  </div>
+  <div class="filter lake">
+    <div>
+      <i class="fa-solid fa-water"></i>
+    </div>
+    <p class="filterText">Lake</p>
+  </div>
+  <div class="filter towers">
+    <div>
+      <i class="fa-solid fa-tower-observation"></i>
+    </div>
+    <p class="filterText">Towers</p>
+  </div>
+  <div class="filter boat">
+    <div>
+      <i class="fa-solid fa-sailboat"></i>
+    </div>
+    <p class="filterText">Boat</p>
+  </div>
 
     <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
@@ -127,5 +230,4 @@
             }
         }
     });
-
 </script>
