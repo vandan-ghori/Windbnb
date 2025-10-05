@@ -28,7 +28,7 @@ module.exports.renderLoginForm = (req, res) => {
 };
 
 module.exports.login = async(req, res) => {
-    req.flash("success", "Welcome back to Wanderlust");
+    req.flash("success", "Welcome back to Windbnb");
     let redirectUrl = res.locals.redirectUrl || "/listings";
     res.redirect(redirectUrl);
 };
@@ -41,4 +41,5 @@ module.exports.logout = (req, res, next) => {
         req.flash("success", "You are logged out!");
         res.redirect("/listings");
     });
+
 };
