@@ -154,9 +154,17 @@ body {
     width: 500px;
 }
 
+@media (max-width: 768px) {
+    #show{
+        margin-left: -150px !important;
+        margin-right: -150px !important;
+    }
+}
+
 @media (max-width: 1000px) {
   #map {
     height: 200px !important;
     width: 200px !important;
   }
 }
+
