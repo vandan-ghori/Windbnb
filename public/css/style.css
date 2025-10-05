@@ -30,29 +30,24 @@ body {
     color: #222222 !important;
 }
 
+
 @media (max-width: 768px) {
   .navbar-collapse {
-    background: rgb(255, 255, 255) !important;
-    opacity: 1 !important;
+    background: rgb(237, 237, 237) !important;
+    opacity: 0.9 !important;
   }
-
-  .show {
-    margin-left: -150px !important;
-    margin-right: -150px !important;
-    }
-
   .navbar-nav {
     justify-content: center !important;
     align-items: center !important;
   }
 
   .navbar-nav .nav-link {
-    padding: 15px !important;
+    padding: 8px !important;
     background: none;
   }
 
   .navbar-nav .nav-link:hover {
-    background: rgb(255, 255, 255);
+    background: rgb(255, 188, 218);
     transition: 0.5s !important;
   }
 }
@@ -125,6 +120,8 @@ body {
     background-color: #ffffff;
 }
 
+
+
 /*New Page*/
 .add-btn {
     background-color: #fe424d !important;
@@ -163,4 +160,3 @@ body {
     width: 200px !important;
   }
 }
-
