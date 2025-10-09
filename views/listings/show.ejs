@@ -37,7 +37,7 @@
     </div>
     <% } %>
 
-    <div class="col-8 offset-3">
+    <div class="col-8 offset-3 mt-3">
         <hr>
         <% if (currUser) { %>
         <h4>Leave a Review</h4>
@@ -59,7 +59,7 @@
                 </fieldset>
             </div>
 
-            <div class="mt-3 mb-3">
+            <div class=" col-8 mt-3 mb-3">
                 <label for="comment" class="form-label">Comment</label><br>
                 <textarea name="review[comment]" id="comment" class="form-control" cols="20" rows="5" required></textarea>
                 <div class="invalid-feedback">
@@ -68,13 +68,13 @@
             </div>
             <button class="btn btn-outline-dark">Submit</button>
         </form>
-        <hr>
         <% } %>
 
         <% if (listing.reviews.length > 0) { %>
-            <div class="row">
+            <div class="row col-8">
+                <hr>
                 <p>All Reviews</p>
-                <div class="row row-cols-4 row-cols-md-3 g-2 ml-3">
+                <div class="Review row row-cols-4 row-cols-md-3 g-2 ml-3">
                     <% for (review of listing.reviews) {%>
                         <div class="card review col-5 mb-3">
                             <div class="card-body mb-3 ">
@@ -90,12 +90,12 @@
                         </div>
                     <% } %>
                 </div>
+                <hr>
             </div>
-            <hr>
         <% } %>
     </div>
     <div class="col-8 offset-3">
-            <h3><ul>Where you'll be</ul></h3>
+            <h3>Where you'll be</h3>
             <div id="map" class="mt-4 mb-4"></div>
     </div>
 </div>
