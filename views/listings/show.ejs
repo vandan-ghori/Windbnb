@@ -38,8 +38,8 @@
     <% } %>
 
     <div class="col-8 offset-3 mt-3">
-        <hr>
         <% if (currUser) { %>
+            <div class="col-8"><hr></div>
         <h4>Leave a Review</h4>
         <form class="mb-3 needs-validation" action="/listings/<%= listing.id %>/reviews" method="post" novalidate>
             <div class="mt-3 mb-3">
