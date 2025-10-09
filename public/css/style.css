@@ -168,6 +168,10 @@ body {
     padding-right: 0;
 }
 
+.review {
+    margin-left: 15px;
+}
+
 #map {
     height: 250px;
     width: 500px;
@@ -179,3 +183,4 @@ body {
     width: 320px !important;
   }
 }
+
