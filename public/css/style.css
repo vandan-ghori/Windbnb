@@ -140,6 +140,15 @@ body {
         margin-left: -150px !important;
         margin-right: -150px !important;
     }
+
+    .Review {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .review {
+        width: 20rem !important;
+    }
 }
 
 .add-btn {
@@ -183,4 +192,3 @@ body {
     width: 320px !important;
   }
 }
-
