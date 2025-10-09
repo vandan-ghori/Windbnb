@@ -107,6 +107,20 @@ body {
     font-weight: 400 !important;
 }
 
+.Desc {
+    border: 1px solid #fe424d !important;
+    margin-top: 2rem;
+    border-radius: 25px;
+    box-shadow: 1px 1px 1px 1px  #fe424d;
+}
+
+.desc {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
 .listing-link {
     text-decoration: none;
 }
@@ -121,8 +135,13 @@ body {
 }
 
 
+@media (max-width: 768px) {
+    #show{
+        margin-left: -150px !important;
+        margin-right: -150px !important;
+    }
+}
 
-/*New Page*/
 .add-btn {
     background-color: #fe424d !important;
     border: none !important;
@@ -154,18 +173,9 @@ body {
     width: 500px;
 }
 
-@media (max-width: 768px) {
-    #show{
-        margin-left: -150px !important;
-        margin-right: -150px !important;
-    }
-}
-
 @media (max-width: 1000px) {
   #map {
     height: 200px !important;
     width: 320px !important;
   }
 }
-
-
