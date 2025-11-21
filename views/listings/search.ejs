@@ -56,14 +56,15 @@
   <% } else { %>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
       <% results.forEach(result => { %>
-        <div class="col-md-4 mb-4">
+        <a href="/listings/<%= result._id%>" class="listing-link">
+        <div class="col mb-4">
           <div class="card listing-card h-100">
             <% if (result.image && result.image.url) { %>
               <img src="<%= result.image.url %>" class="card-img-top"  alt="<%= result.title %>" style="height:20rem;">
             <% } %>
             <div class="card-img-overlay"></div>
             <div class="card-body">
-              <p class="card-text"><a href="/listings/<%= result._id %>"></a>
+              <p class="card-text">
                 <b><%= result.title %></b>
                 <br>
                 &#8377 <%= result.price.toLocaleString("en-IN") %> / night
@@ -71,6 +72,7 @@
             </div>
           </div>
         </div>
+        </a>
       <% }) %>
     </div>
     
