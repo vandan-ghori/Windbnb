@@ -1,0 +1,88 @@
+<style>
+  .listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.Desc {
+    border: 1px solid #fe424d !important;
+    margin-top: 2rem;
+    border-radius: 25px;
+    box-shadow: 1px 1px 1px 1px  #fe424d;
+}
+
+.desc {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: #ffffff;
+}
+</style>
+<% layout('layouts/boilerplate') %>
+
+<div class="container mt-4">
+  <h2>Search results for "<%= q %>"</h2>
+  <p><%= total %> result<%= total !== 1 ? 's' : '' %></p>
+
+  <% if (results.length === 0) { %>
+    <div class="alert alert-info">No results found.</div>
+  <% } else { %>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+      <% results.forEach(result => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card listing-card h-100">
+            <% if (result.image && result.image.url) { %>
+              <img src="<%= result.image.url %>" class="card-img-top"  alt="<%= result.title %>" style="height:20rem;">
+            <% } %>
+            <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <p class="card-text"><a href="/listings/<%= result._id %>"></a>
+                <b><%= result.title %></b>
+                <br>
+                &#8377 <%= result.price.toLocaleString("en-IN") %> / night
+              <p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    
+    <nav aria-label="Search pagination">
+      <ul class="pagination">
+        <% if (page > 1) { %>
+          <li class="page-item"><a class="page-link" href="?q=<%= encodeURIComponent(q) %>&page=<%= page - 1 %>">Previous</a></li>
+        <% } %>
+        <% if ((page * limit) < total) { %>
+          <li class="page-item"><a class="page-link" href="?q=<%= encodeURIComponent(q) %>&page=<%= page + 1 %>">Next</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  <% } %>
+</div>
