@@ -74,4 +74,35 @@ module.exports.destroyListing = async (req,res) => {
     console.log(deleteListing);
     req.flash("success", "Listing Deleted!");
     res.redirect("/listings");
+
+};
+
+module.exports.search = async (req, res, next) => {
+  try {
+    const q = (req.query.q || '').trim();
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.min(24, Math.max(6, parseInt(req.query.limit) || 12));
+    if (!q) {
+      return res.render('listings/search', { results: [], total: 0, q: '', page, limit });
+    }
+
+    if (q.length > 200) {
+      return res.status(400).send('Query too long');
+    }
+
+    const filter = { $text: { $search: q, $language: 'english' } };
+    const projection = { score: { $meta: 'textScore' }, title: 1, description: 1, image: 1, price: 1, location: 1, country: 1 };
+
+    const results = await Listing.find(filter, projection)
+      .sort({ score: { $meta: 'textScore' }, createdAt: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .exec();
+
+    const total = await Listing.countDocuments(filter);
+
+    res.render('listings/search', { results, total, q, page, limit });
+  } catch (err) {
+    next(err);
+  }
 };
