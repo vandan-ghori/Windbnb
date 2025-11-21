@@ -46,10 +46,18 @@ body {
     background: none;
   }
 
+  .exporeNav{
+    display: none !important;
+  }
+
   .navbar-nav .nav-link:hover {
     background: rgb(255, 188, 218);
     transition: 0.5s !important;
   }
+    .searchOpt {
+        margin-top: 12px !important;
+        margin-bottom: 10px !important;
+    }
 }
 
 
