@@ -22,12 +22,12 @@ const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
 
-app.set("view engine", "ejs");
+app.engine("ejs",ejsMate);
 app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
-app.engine("ejs",ejsMate);
 
 main()
  .then(() => {
@@ -64,10 +64,6 @@ const sessionOptions = {
         httpOnly: true,
     },
 };
-
-// app.get("/", (req,res) => {
-//     res.send("Working");
-// });
 
 app.use(session(sessionOptions));
 app.use(flash());
